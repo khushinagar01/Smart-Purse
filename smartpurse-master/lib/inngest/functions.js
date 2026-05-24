@@ -4,7 +4,7 @@ import { inngest } from "./client";
 import EmailTemplate from "@/emails/template";
 
 export const checkBudgetAlerts = inngest.createFunction(
-  { name: "Check Budget Alerts" },
+  { id: "check-budget-alerts", name: "Check Budget Alerts" },
   { cron: "0 */6 * * *" }, // Every 6 hours
   async ({ step }) => {
     const budgets = await step.run("fetch-budgets", async () => {
